@@ -1,5 +1,7 @@
 package solucionandoproblemascomkotlin
 
+import kotlin.math.sqrt
+
 // os testes 3 e 5 não passaram
 fun main() {
     val n = readLine()!!.toInt()
@@ -7,22 +9,32 @@ fun main() {
 
     for (i in 0 until n) {
         var x = readLine()!!.toDouble()
-        isPrime(x)
+        val prime = isPrime(x)
+        print(prime)
 
 
     }
 }
 
-fun isPrime(num: Double) {
+fun print(prime: Boolean) {
+    if (prime) {
+        print("Prime\n")
+    } else print("Not Prime\n")
+}
 
-    if (num % num == 0.0) {
-        if (num == 1.0 || num !== 2.0 && (num % 2.0) == 0.0) {
-            print("Not Prime\n")
-        } else {
-            print("Prime\n")
-        }
+fun isPrime(num: Double): Boolean {
+
+    if (num < 2) return false
+    if (num % 2 == 0.0) return num == 2.0
+    val root = sqrt(num).toInt()
+    var i = 3
+    while (i <= root) {
+        if (num % i == 0.0) return false
+        i += 2
     }
+    return true
 
 }
+
 
 
