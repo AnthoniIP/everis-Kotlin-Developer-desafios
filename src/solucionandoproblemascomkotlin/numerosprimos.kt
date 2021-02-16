@@ -2,7 +2,6 @@ package solucionandoproblemascomkotlin
 
 import kotlin.math.sqrt
 
-// os testes 3 e 5 não passaram
 fun main() {
     val n = readLine()!!.toInt()
 
